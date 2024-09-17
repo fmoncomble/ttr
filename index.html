@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ratio type/token</title>
+        <script src="https://unpkg.com/compromise"></script>
+        <script src="https://unpkg.com/fr-compromise"></script>
+        <script src="https://unpkg.com/chart.js"></script>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="index.css" type="text/css" />
+    </head>
+    <body>
+        <h1>Ratio type/token</h1>
+        <div class="description">
+            <p>
+                Cet outil permet d'estimer la diversité lexicale d'un ou
+                plusieurs corpus sous forme de courbe de progression.
+            </p>
+        </div>
+        <div id="img">
+            <img src="graphe.png" height="100px" title="cliquer pour zoomer" />
+            <div id="zoom">Exemple : cliquer pour zoomer</div>
+        </div>
+        <div id="wrapper">
+            <br />
+            <div id="xml-container" class="file-input">
+                <div id="instructions">
+                    <b
+                        >Charger des corpus au format
+                        <span id="TXM">XML-TEI</span> (lemmatisés avec TXM —
+                        plus précis) ou TXT UTF-8 (moins précis)</b
+                    >
+                </div>
+                <dialog id="txm-dialog">
+                    <div>
+                        <p>
+                            Pour charger un ou plusieurs fichiers XML-TEI
+                            lemmatisés au préalable avec TXM, naviguez jusqu'au
+                            dossier<br />TXM-<code>VERSION</code> / corpora /
+                            <code>NOM-DU-CORPUS</code> / txm /
+                            <code>NOM-DU-CORPUS</code>
+                        </p>
+                    </div>
+                    <button id="ok-btn">OK</button>
+                </dialog>
+                <div id="xml-div" class="xml-input" style="display: none">
+                    <div class="corpus-nb">Corpus n°1</div>
+                    <div>
+                        <label>
+                            Nom du corpus :
+                            <input
+                                type="text"
+                                class="corpus-name"
+                                name="corpus-name"
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Langue :
+                            <select class="lang-select" name="lang-select">
+                                <option value="fr">Français</option>
+                                <option value="en">Anglais</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="file-input-div">
+                        <label class="file-label">
+                            Choisir le(s) fichier(s)
+                            <input
+                                class="xml-input"
+                                name="xml-input"
+                                type="file"
+                                multiple
+                                accept=".xml, .txt" /></label
+                        ><span class="file-nb"></span>
+                    </div>
+                </div>
+                <button id="add-btn">Ajouter un corpus</button>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <label for="type-choice">
+                        Comptabiliser :
+                        <select name="type-choice" id="type-choice">
+                            <option value="types">Types</option>
+                            <option value="lemmas">Lemmes</option>
+                        </select>
+                    </label>
+                    <div>
+                        <label for="interval-input">
+                            Intervalle d'échantillonnage :
+                            <input
+                                id="interval-input"
+                                name="interval-input"
+                                type="number"
+                                value="1000"
+                            />
+                            tokens
+                        </label>
+                    </div>
+                </div>
+                <button id="compute-btn">Créer le graphe</button>
+                <span id="counter"></span>
+                <div>
+                    <br />
+                    <button id="dl-graph" style="display: none">
+                        Télécharger le graphe
+                    </button>
+                    <button id="dl-data" style="display: none">
+                        Télécharger les données (CSV)
+                    </button>
+                    <button id="reset" style="display: none">
+                        Réinitialiser
+                    </button>
+                </div>
+            </div>
+            <br />
+            <div class="chart-container">
+                <canvas id="chart" width="400" height="200"></canvas>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="sign">F. Moncomble <span id="year"></span></div>
+            <div>
+                <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"
+                    target="_blank"
+                    ><img src="by-nc-sa.svg"
+                /></a>
+            </div>
+        </div>
+    </body>
+</html>

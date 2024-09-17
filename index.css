@@ -1,0 +1,221 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+div.description {
+    max-width: 500px;
+    text-wrap: balance;
+}
+
+div#img {
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: fit-content;
+    position: relative;
+}
+
+div#zoom {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    font-size: xx-small;
+    background-color: rgb(256, 256, 256);
+    border-radius: 2px;
+    color: gray;
+    padding: 2px;
+}
+
+img {
+    cursor: pointer;
+}
+
+dialog {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px gray;
+}
+
+.close-btn {
+    color: #cc0000;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    border: solid 1px #cc0000;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+.close-btn:hover {
+    color: red;
+    border-color: red;
+}
+
+div#instructions {
+    max-width: 500px;
+    text-wrap: balance;
+}
+
+span#TXM {
+    color: darkblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+span#TXM:hover {
+    color: blue;
+}
+
+dialog#txm-dialog,
+dialog#txm-dialog div {
+    text-align: center;
+    text-wrap: balance;
+    max-width: 70vh;
+}
+
+button,
+.file-label {
+    cursor: pointer;
+    border: solid 1px gray;
+    background-color: gray;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: small;
+}
+
+button:hover,
+.file-label:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+input#interval-input {
+    width: 6em;
+}
+
+button#compute-btn {
+    width: 110px;
+    text-align: center;
+}
+
+button#reset {
+    border-color: #cc0000;
+    background-color: #cc0000;
+}
+
+button#reset:hover {
+    border-color: red;
+    background-color: red;
+    color: white;
+}
+
+input,
+select {
+    border: solid 1px gray;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-input-div {
+    position: relative;
+    display: inline-block;
+}
+
+input.xml-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-label {
+    display: inline-block;
+}
+
+.file-nb {
+    margin-left: 5px;
+    font-size: small;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+div.xml-input {
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: #eee;
+    padding: 5px;
+    max-width: 300px;
+    text-wrap: wrap;
+}
+
+span#counter {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.spinner {
+    border: solid 3px white;
+    border-left: solid 3px black;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    margin-left: 5px;
+    animation: spin 2s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div.chart-container {
+    max-width: 70vw;
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: x-small;
+    color: #67757e;
+}
+
+.sign {
+    margin: 0px;
+}
+
+div.footer div a img {
+    height: 30px;
+}
